@@ -1,23 +1,14 @@
-#pragma once 
+#pragma once
 #include "../../inc.hpp"
-#include <conio.h>
 
-enum Colors {
-  NONE,
-  RED,
-  GREEN,
-  YELLOW,
-  BLUE,
-  MAGENTA,
-  CYAN
-};
+enum Colors { NONE, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN };
 
 class Log {
   int lines;
 
-  public:
+ public:
   Log() { lines = 0; }
-  ~Log() { }
+  ~Log() {}
 
   void Print(std::string, Colors = NONE);
   void PrintN(int, std::string);
@@ -33,7 +24,7 @@ class Log {
 
   void Wait();
 
+  void Reset();
+
   std::string Color(Colors);
-
 };
-

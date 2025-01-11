@@ -5,7 +5,7 @@ Hero::Hero(std::string name, double damage, double maxhealth, double defense, do
   this->damage = damage;
   this->defense = defense;
   this->speed = speed;
-  
+
   this->maxhealth = maxhealth;
   this->maxstamina = 100;
   this->maxmental = 100;
@@ -16,5 +16,3 @@ Hero::Hero(std::string name, double damage, double maxhealth, double defense, do
 }
 
 void Hero::Sleep() {}
-
-

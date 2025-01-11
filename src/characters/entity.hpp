@@ -1,13 +1,12 @@
-#pragma once 
+#pragma once
 #include "../inc.hpp"
 
-// #include "enemy/enemy.hpp" 
-// #include "enemy/hero/hero.hpp" 
-// #include "enemy/npc/npc.hpp" 
+// #include "enemy/enemy.hpp"
+// #include "enemy/hero/hero.hpp"
+// #include "enemy/npc/npc.hpp"
 
 class Entity {
-  protected:
-
+ protected:
   std::string name;
   double damage;
   double maxhealth;
@@ -16,12 +15,9 @@ class Entity {
 
   double health;
 
-  public:
-
+ public:
   Entity() {};
-  virtual ~Entity() { };
+  virtual ~Entity() {};
 
   virtual std::string GetName() const = 0;
-
 };
-

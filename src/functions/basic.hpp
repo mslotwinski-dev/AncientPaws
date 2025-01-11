@@ -1,4 +1,4 @@
-#pragma once 
+#pragma once
 
-#include "basic/pick.hpp"
 #include "basic/log.hpp"
+#include "basic/pick.hpp"

@@ -1,17 +1,16 @@
-#pragma once 
+#pragma once
 #include "../entity.hpp"
 
 class Hero : public Entity {
-  protected:
+ protected:
   double maxstamina;
   double maxmental;
 
   double stamina;
   double mental;
 
-  public: 
-
-  Hero(std::string, double , double, double, double);
+ public:
+  Hero(std::string, double, double, double, double);
   virtual ~Hero() {}
 
   virtual void SkillA() = 0;
@@ -22,8 +21,7 @@ class Hero : public Entity {
 };
 
 class Cappybara : public Hero {
-  public:
-
+ public:
   Cappybara(std::string = "Jagoda", double = 18, double = 125, double = 10, double = 10);
   ~Cappybara() {}
 
@@ -35,8 +33,7 @@ class Cappybara : public Hero {
 };
 
 class Armadillo : public Hero {
-  public:
-
+ public:
   Armadillo(std::string = "Rufi", double = 15, double = 125, double = 22, double = 7);
   ~Armadillo() {}
 
@@ -48,8 +45,7 @@ class Armadillo : public Hero {
 };
 
 class Hedgehog : public Hero {
-  
-  public:
+ public:
   Hedgehog(std::string = "Tytus", double = 12, double = 80, double = 3, double = 4);
   ~Hedgehog() {}
 
@@ -59,5 +55,3 @@ class Hedgehog : public Hero {
 
   std::string GetName() const override;
 };
-
-

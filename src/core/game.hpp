@@ -1,18 +1,23 @@
-#pragma once 
-#include "../inc.hpp"
+#pragma once
 #include "../characters/hero/hero.hpp"
+#include "../functions/basic.hpp"
+#include "../inc.hpp"
 
-// Wstępna deklaracja klasy Story
 class Story;
 
 class Game {
   std::vector<Hero*> heros;
-  Story* story;  // Używamy wskaźnika, aby unikać cyklicznej zależności
+  Story* story;
+  Log log;
 
-public:
+ public:
   Game();
   ~Game();
 
-  void Start();
+  bool Start();
+
   std::vector<Hero*> GetHeroes() { return heros; }
+
+  std::vector<std::string> GetNames();
+  std::string GetNames(int);
 };

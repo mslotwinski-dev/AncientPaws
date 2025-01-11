@@ -1,6 +1,9 @@
 #include "app.hpp"
 
 App::App() : game(), log() {
+  SetConsoleOutputCP(CP_UTF8);
+  system("cls");
+
   log.PrintStory("To historia z życia wzięta, a zaczyna się tak");
   log.Print("Ancient Paws", RED);
   log.Print("by Mateusz Słotwiński", CYAN);
@@ -10,7 +13,21 @@ App::App() : game(), log() {
 }
 
 void App::Play() {
-  game.Start();
+  if (game.Start()) {
+    Finish();
+  }
+}
+
+void App::Finish() {
+  log.Print("Koniec!", RED);
+  log.Notice("Autor", "Mateusz Słotwiński", CYAN);
+
+  int pick = Pick("Zagraj ponownie", "Zakończ");
+  log.Clear();
+  switch (pick) {
+    case 1: Start();
+    case 2: exit(0);
+  }
 }
 
 void App::Menu() {
@@ -27,15 +44,13 @@ void App::Author() {
   Start();
 }
 
-
 void App::Start() {
   int pick = Pick("Graj", "Opcje", "Autor", "Zakończ");
 
-  switch(pick) {
-    case 1: { Play(); break;}
-    case 2: { Menu(); break; }
-    case 3: { Author(); break; }
-    case 4: { break; }
+  switch (pick) {
+    case 1: Play();
+    case 2: Menu();
+    case 3: Author();
+    case 4: break;
   }
-
 }
