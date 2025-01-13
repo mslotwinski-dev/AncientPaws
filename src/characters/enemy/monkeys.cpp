@@ -4,17 +4,14 @@ Monkey::Monkey(std::string name, double damage, double maxhealth, double defense
     : Enemy(name, damage, maxhealth, defense, speed) {}
 
 std::string Monkey::SkillA(std::vector<Entity *> good, std::vector<Entity *> bad) {
-  int target = 0;
-  if (good.size() != 0) {
-    target = 0;
-  }
+  Entity *target = PickTarget(good);
 
-  double CalcDamage = this->damage - good[target]->GetDefense();
+  double CalcDamage = this->damage - target->GetDefense();
 
-  std::string result = GetName() + " uderza włócznią w " + good[target]->GetName() + " zadając " +
+  std::string result = GetName() + " uderza włócznią w " + target->GetName() + " zadając " +
                        std::to_string(static_cast<int>(std::round(CalcDamage))) + " punktów obrażeń";
 
-  if (good[target]->DealDmg(CalcDamage)) {
+  if (target->DealDmg(CalcDamage)) {
     result += " zabijając przeciwnika";
   }
 
@@ -22,17 +19,14 @@ std::string Monkey::SkillA(std::vector<Entity *> good, std::vector<Entity *> bad
 }
 
 std::string Monkey::SkillB(std::vector<Entity *> good, std::vector<Entity *> bad) {
-  int target = 0;
-  if (good.size() != 0) {
-    target = 0;
-  }
+  Entity *target = PickTarget(good);
 
-  double CalcDamage = this->damage - good[target]->GetDefense();
+  double CalcDamage = this->damage - target->GetDefense();
 
-  std::string result = GetName() + " rzuca bananem w " + good[target]->GetName() + " zadając " +
+  std::string result = GetName() + " rzuca bananem w " + target->GetName() + " zadając " +
                        std::to_string(static_cast<int>(std::round(CalcDamage))) + " punktów obrażeń";
 
-  if (good[target]->DealDmg(CalcDamage)) {
+  if (target->DealDmg(CalcDamage)) {
     result += " zabijając przeciwnika";
   }
 

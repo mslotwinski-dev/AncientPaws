@@ -31,16 +31,16 @@ void Fight::Run() {
     for (auto it = entities.begin(); it != entities.end();) {
       Visualize();
 
+      if (enemies.empty()) {
+        return;
+      }
+
       if (*it != nullptr) {
         log.Print((*it)->Turn(heroes, enemies));
       }
 
       std::this_thread::sleep_for(std::chrono::milliseconds(1000));
       log.Clear();
-
-      if (enemies.empty()) {
-        return;
-      }
 
       if (Kill()) {
         it = entities.begin();

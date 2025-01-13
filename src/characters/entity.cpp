@@ -1,6 +1,6 @@
 #include "entity.hpp"
 
-Entity* EntityPickTarget(std::vector<Entity*> targets) {
+Entity* Entity::PickTarget(std::vector<Entity*> targets) {
   if (targets.empty()) {
     return nullptr;
   }
