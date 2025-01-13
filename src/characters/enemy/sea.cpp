@@ -3,20 +3,20 @@
 Shark::Shark(std::string name, double damage, double maxhealth, double defense, double speed)
     : Enemy(name, damage, maxhealth, defense, speed) {}
 
-void Shark::SkillA() { std::cout << "Shark Skill A" << std::endl; }
+std::string Shark::SkillA(std::vector<Entity *> good, std::vector<Entity *> bad) { return "A"; }
 
-void Shark::SkillB() { std::cout << "Shark Skill B" << std::endl; }
+std::string Shark::SkillB(std::vector<Entity *> good, std::vector<Entity *> bad) { return "B"; }
 
 Squid::Squid(std::string name, double damage, double maxhealth, double defense, double speed)
     : Enemy(name, damage, maxhealth, defense, speed) {}
 
-void Squid::SkillA() { std::cout << "Squid Skill A" << std::endl; }
+std::string Squid::SkillA(std::vector<Entity *> good, std::vector<Entity *> bad) { return "A"; }
 
-void Squid::SkillB() { std::cout << "Squid Skill B" << std::endl; }
+std::string Squid::SkillB(std::vector<Entity *> good, std::vector<Entity *> bad) { return "B"; }
 
 Whale::Whale(std::string name, double damage, double maxhealth, double defense, double speed)
     : Enemy(name, damage, maxhealth, defense, speed) {}
 
-void Whale::SkillA() { std::cout << "Whale Skill A" << std::endl; }
+std::string Whale::SkillA(std::vector<Entity *> good, std::vector<Entity *> bad) { return "A"; }
 
-void Whale::SkillB() { std::cout << "Whale Skill B" << std::endl; }
+std::string Whale::SkillB(std::vector<Entity *> good, std::vector<Entity *> bad) { return "B"; }

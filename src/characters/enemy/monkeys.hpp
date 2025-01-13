@@ -6,8 +6,8 @@ class Monkey : public Enemy {
   Monkey(std::string = "Małpa", double = 14, double = 45, double = 0, double = 3);
   ~Monkey() {}
 
-  void SkillA() override;
-  void SkillB() override;
+  std::string SkillA(std::vector<Entity *>, std::vector<Entity *>) override;
+  std::string SkillB(std::vector<Entity *>, std::vector<Entity *>) override;
 };
 
 class MonkeyWarrior : public Monkey {
@@ -15,17 +15,17 @@ class MonkeyWarrior : public Monkey {
   MonkeyWarrior(std::string = "Małpa", double = 14, double = 45, double = 0, double = 3);
   ~MonkeyWarrior() {}
 
-  void SkillA() override;
-  void SkillB() override;
+  std::string SkillA(std::vector<Entity *>, std::vector<Entity *>) override;
+  std::string SkillB(std::vector<Entity *>, std::vector<Entity *>) override;
 };
 
 class MonkeyHunter : public Monkey {
  public:
-  MonkeyHunter(std::string = "Małpa", double = 14, double = 45, double = 0, double = 3);
+  MonkeyHunter(std::string = "Małpa Łowca", double = 14, double = 45, double = 0, double = 13);
   ~MonkeyHunter() {}
 
-  void SkillA() override;
-  void SkillB() override;
+  std::string SkillA(std::vector<Entity *>, std::vector<Entity *>) override;
+  std::string SkillB(std::vector<Entity *>, std::vector<Entity *>) override;
 };
 
 class MonkeyBard : public Monkey {
@@ -33,8 +33,8 @@ class MonkeyBard : public Monkey {
   MonkeyBard(std::string = "Małpa", double = 14, double = 45, double = 0, double = 3);
   ~MonkeyBard() {}
 
-  void SkillA() override;
-  void SkillB() override;
+  std::string SkillA(std::vector<Entity *>, std::vector<Entity *>) override;
+  std::string SkillB(std::vector<Entity *>, std::vector<Entity *>) override;
 };
 
 class MonkeyEngineer : public Monkey {
@@ -42,8 +42,8 @@ class MonkeyEngineer : public Monkey {
   MonkeyEngineer(std::string = "Małpa", double = 14, double = 45, double = 0, double = 3);
   ~MonkeyEngineer() {}
 
-  void SkillA() override;
-  void SkillB() override;
+  std::string SkillA(std::vector<Entity *>, std::vector<Entity *>) override;
+  std::string SkillB(std::vector<Entity *>, std::vector<Entity *>) override;
 };
 
 class MonkeyGeneral : public Monkey {
@@ -51,6 +51,6 @@ class MonkeyGeneral : public Monkey {
   MonkeyGeneral(std::string = "Małpa", double = 14, double = 45, double = 0, double = 3);
   ~MonkeyGeneral() {}
 
-  void SkillA() override;
-  void SkillB() override;
+  std::string SkillA(std::vector<Entity *>, std::vector<Entity *>) override;
+  std::string SkillB(std::vector<Entity *>, std::vector<Entity *>) override;
 };

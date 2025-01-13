@@ -6,8 +6,8 @@ class Puma : public Enemy {
   Puma(std::string, double, double, double, double);
   ~Puma() {}
 
-  void SkillA() override;
-  void SkillB() override;
+  std::string SkillA(std::vector<Entity *>, std::vector<Entity *>) override;
+  std::string SkillB(std::vector<Entity *>, std::vector<Entity *>) override;
 };
 
 class Fox : public Enemy {
@@ -15,8 +15,8 @@ class Fox : public Enemy {
   Fox(std::string, double, double, double, double);
   ~Fox() {}
 
-  void SkillA() override;
-  void SkillB() override;
+  std::string SkillA(std::vector<Entity *>, std::vector<Entity *>) override;
+  std::string SkillB(std::vector<Entity *>, std::vector<Entity *>) override;
 };
 
 class Bear : public Enemy {
@@ -24,6 +24,6 @@ class Bear : public Enemy {
   Bear(std::string, double, double, double, double);
   ~Bear() {}
 
-  void SkillA() override;
-  void SkillB() override;
+  std::string SkillA(std::vector<Entity *>, std::vector<Entity *>) override;
+  std::string SkillB(std::vector<Entity *>, std::vector<Entity *>) override;
 };

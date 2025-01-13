@@ -3,41 +3,73 @@
 Monkey::Monkey(std::string name, double damage, double maxhealth, double defense, double speed)
     : Enemy(name, damage, maxhealth, defense, speed) {}
 
-void Monkey::SkillA() { std::cout << "Monkey Skill A" << std::endl; }
+std::string Monkey::SkillA(std::vector<Entity *> good, std::vector<Entity *> bad) {
+  int target = 0;
+  if (good.size() != 0) {
+    target = 0;
+  }
 
-void Monkey::SkillB() { std::cout << "Monkey Skill B" << std::endl; }
+  double CalcDamage = this->damage - good[target]->GetDefense();
+
+  std::string result = GetName() + " uderza włócznią w " + good[target]->GetName() + " zadając " +
+                       std::to_string(static_cast<int>(std::round(CalcDamage))) + " punktów obrażeń";
+
+  if (good[target]->DealDmg(CalcDamage)) {
+    result += " zabijając przeciwnika";
+  }
+
+  return result;
+}
+
+std::string Monkey::SkillB(std::vector<Entity *> good, std::vector<Entity *> bad) {
+  int target = 0;
+  if (good.size() != 0) {
+    target = 0;
+  }
+
+  double CalcDamage = this->damage - good[target]->GetDefense();
+
+  std::string result = GetName() + " rzuca bananem w " + good[target]->GetName() + " zadając " +
+                       std::to_string(static_cast<int>(std::round(CalcDamage))) + " punktów obrażeń";
+
+  if (good[target]->DealDmg(CalcDamage)) {
+    result += " zabijając przeciwnika";
+  }
+
+  return result;
+}
 
 MonkeyWarrior::MonkeyWarrior(std::string name, double damage, double maxhealth, double defense, double speed)
     : Monkey(name, damage, maxhealth, defense, speed) {}
 
-void MonkeyWarrior::SkillA() { std::cout << "Monkey Warrior Skill A" << std::endl; }
+std::string MonkeyWarrior::SkillA(std::vector<Entity *> good, std::vector<Entity *> bad) { return "A"; }
 
-void MonkeyWarrior::SkillB() { std::cout << "Monkey Warrior Skill B" << std::endl; }
+std::string MonkeyWarrior::SkillB(std::vector<Entity *> good, std::vector<Entity *> bad) { return "B"; }
 
 MonkeyHunter::MonkeyHunter(std::string name, double damage, double maxhealth, double defense, double speed)
     : Monkey(name, damage, maxhealth, defense, speed) {}
 
-void MonkeyHunter::SkillA() { std::cout << "Monkey Hunter Skill A" << std::endl; }
+std::string MonkeyHunter::SkillA(std::vector<Entity *> good, std::vector<Entity *> bad) { return "A"; }
 
-void MonkeyHunter::SkillB() { std::cout << "Monkey Hunter Skill B" << std::endl; }
+std::string MonkeyHunter::SkillB(std::vector<Entity *> good, std::vector<Entity *> bad) { return "B"; }
 
 MonkeyBard::MonkeyBard(std::string name, double damage, double maxhealth, double defense, double speed)
     : Monkey(name, damage, maxhealth, defense, speed) {}
 
-void MonkeyBard::SkillA() { std::cout << "Monkey Bard Skill A" << std::endl; }
+std::string MonkeyBard::SkillA(std::vector<Entity *> good, std::vector<Entity *> bad) { return "A"; }
 
-void MonkeyBard::SkillB() { std::cout << "Monkey Bard Skill B" << std::endl; }
+std::string MonkeyBard::SkillB(std::vector<Entity *> good, std::vector<Entity *> bad) { return "B"; }
 
 MonkeyEngineer::MonkeyEngineer(std::string name, double damage, double maxhealth, double defense, double speed)
     : Monkey(name, damage, maxhealth, defense, speed) {}
 
-void MonkeyEngineer::SkillA() { std::cout << "Monkey Engineer Skill A" << std::endl; }
+std::string MonkeyEngineer::SkillA(std::vector<Entity *> good, std::vector<Entity *> bad) { return "A"; }
 
-void MonkeyEngineer::SkillB() { std::cout << "Monkey Engineer Skill B" << std::endl; }
+std::string MonkeyEngineer::SkillB(std::vector<Entity *> good, std::vector<Entity *> bad) { return "B"; }
 
 MonkeyGeneral::MonkeyGeneral(std::string name, double damage, double maxhealth, double defense, double speed)
     : Monkey(name, damage, maxhealth, defense, speed) {}
 
-void MonkeyGeneral::SkillA() { std::cout << "Monkey General Skill A" << std::endl; }
+std::string MonkeyGeneral::SkillA(std::vector<Entity *> good, std::vector<Entity *> bad) { return "A"; }
 
-void MonkeyGeneral::SkillB() { std::cout << "Monkey General Skill B" << std::endl; }
+std::string MonkeyGeneral::SkillB(std::vector<Entity *> good, std::vector<Entity *> bad) { return "B"; }

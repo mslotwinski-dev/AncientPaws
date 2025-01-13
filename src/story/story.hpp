@@ -1,6 +1,4 @@
 #pragma once
-#include "../characters/enemy/monkeys.hpp"
-#include "../core/fight.hpp"
 #include "../core/game.hpp"
 #include "../functions/basic.hpp"
 #include "../inc.hpp"

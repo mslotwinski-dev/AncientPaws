@@ -12,10 +12,7 @@ int Pick(Args... args) {
     return oss.str();
   }(args))...};
 
-  int v = Validate(a);
-
-  // Log log;
-  // log.Clear(1);
-
-  return v;
+  return Validate(a);
 }
+
+inline int Pick(std::vector<std::string> a) { return Validate(a); }

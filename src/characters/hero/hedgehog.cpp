@@ -5,8 +5,17 @@ Hedgehog::Hedgehog(std::string name, double damage, double maxhealth, double def
 
 std::string Hedgehog::GetName() const { return "Jeż " + name; };
 
-void Hedgehog::SkillA() { std::cout << "Skill A" << std::endl; }
+std::vector<std::string> Hedgehog::GetSkillList() {
+  std::vector<std::string> a;
 
-void Hedgehog::SkillB() { std::cout << "Skill B" << std::endl; }
+  a.push_back("Nawałnica ostrzy");
+  a.push_back("Tępy kolec");
+  a.push_back("Przebicie");
+  return a;
+}
 
-void Hedgehog::SkillC() { std::cout << "Skill C" << std::endl; }
+std::string Hedgehog::SkillA(std::vector<Entity *> good, std::vector<Entity *> bad) { return "A"; }
+
+std::string Hedgehog::SkillB(std::vector<Entity *> good, std::vector<Entity *> bad) { return "B"; }
+
+std::string Hedgehog::SkillC(std::vector<Entity *> good, std::vector<Entity *> bad) { return "C"; }

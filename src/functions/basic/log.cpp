@@ -88,3 +88,8 @@ void Log::Instant(std::string v, Colors i) {
 }
 
 void Log::Reset() { std::cout << "\033[0m"; }
+
+void Log::ClearOne() {
+  std::cout << "\033[A\033[K";
+  lines--;
+}

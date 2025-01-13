@@ -3,20 +3,20 @@
 Puma::Puma(std::string name, double damage, double maxhealth, double defense, double speed)
     : Enemy(name, damage, maxhealth, defense, speed) {}
 
-void Puma::SkillA() { std::cout << "Puma Skill A" << std::endl; }
+std::string Puma::SkillA(std::vector<Entity *> good, std::vector<Entity *> bad) { return "A"; }
 
-void Puma::SkillB() { std::cout << "Puma Skill B" << std::endl; }
+std::string Puma::SkillB(std::vector<Entity *> good, std::vector<Entity *> bad) { return "B"; }
 
 Fox::Fox(std::string name, double damage, double maxhealth, double defense, double speed)
     : Enemy(name, damage, maxhealth, defense, speed) {}
 
-void Fox::SkillA() { std::cout << "Fox Skill A" << std::endl; }
+std::string Fox::SkillA(std::vector<Entity *> good, std::vector<Entity *> bad) { return "A"; }
 
-void Fox::SkillB() { std::cout << "Fox Skill B" << std::endl; }
+std::string Fox::SkillB(std::vector<Entity *> good, std::vector<Entity *> bad) { return "B"; }
 
 Bear::Bear(std::string name, double damage, double maxhealth, double defense, double speed)
     : Enemy(name, damage, maxhealth, defense, speed) {}
 
-void Bear::SkillA() { std::cout << "Bear Skill A" << std::endl; }
+std::string Bear::SkillA(std::vector<Entity *> good, std::vector<Entity *> bad) { return "A"; }
 
-void Bear::SkillB() { std::cout << "Bear Skill B" << std::endl; }
+std::string Bear::SkillB(std::vector<Entity *> good, std::vector<Entity *> bad) { return "B"; }

@@ -1,38 +1,43 @@
 #include "forest.hpp"
 
-Anteater::Anteater(std::string name, double damage, double maxhealth, double defense, double speed) : Enemy(name, damage, maxhealth, defense, speed) {}
+Anteater::Anteater(std::string name, double damage, double maxhealth, double defense, double speed)
+    : Enemy(name, damage, maxhealth, defense, speed) {}
 
-void Anteater::SkillA() { std::cout << "Anteater Skill A" << std::endl; }
+std::string Anteater::SkillA(std::vector<Entity *> good, std::vector<Entity *> bad) { return "A"; }
 
-void Anteater::SkillB() { std::cout << "Anteater Skill B" << std::endl; }
+std::string Anteater::SkillB(std::vector<Entity *> good, std::vector<Entity *> bad) { return "B"; }
 
-Harpy::Harpy(std::string name, double damage, double maxhealth, double defense, double speed) : Enemy(name, damage, maxhealth, defense, speed) {}
+Harpy::Harpy(std::string name, double damage, double maxhealth, double defense, double speed)
+    : Enemy(name, damage, maxhealth, defense, speed) {}
 
-void Harpy::SkillA() { std::cout << "Harpy Skill A" << std::endl; }
+std::string Harpy::SkillA(std::vector<Entity *> good, std::vector<Entity *> bad) { return "A"; }
 
-void Harpy::SkillB() { std::cout << "Harpy Skill B" << std::endl; }
+std::string Harpy::SkillB(std::vector<Entity *> good, std::vector<Entity *> bad) { return "B"; }
 
-Hawk::Hawk(std::string name, double damage, double maxhealth, double defense, double speed) : Enemy(name, damage, maxhealth, defense, speed) {}
+Hawk::Hawk(std::string name, double damage, double maxhealth, double defense, double speed)
+    : Enemy(name, damage, maxhealth, defense, speed) {}
 
-void Hawk::SkillA() { std::cout << "Hawk Skill A" << std::endl; }
+std::string Hawk::SkillA(std::vector<Entity *> good, std::vector<Entity *> bad) { return "A"; }
 
-void Hawk::SkillB() { std::cout << "Hawk Skill B" << std::endl; }
+std::string Hawk::SkillB(std::vector<Entity *> good, std::vector<Entity *> bad) { return "B"; }
 
-Weasel::Weasel(std::string name, double damage, double maxhealth, double defense, double speed) : Enemy(name, damage, maxhealth, defense, speed) {}
+Weasel::Weasel(std::string name, double damage, double maxhealth, double defense, double speed)
+    : Enemy(name, damage, maxhealth, defense, speed) {}
 
-void Weasel::SkillA() { std::cout << "Weasel Skill A" << std::endl; }
+std::string Weasel::SkillA(std::vector<Entity *> good, std::vector<Entity *> bad) { return "A"; }
 
-void Weasel::SkillB() { std::cout << "Weasel Skill B" << std::endl; }
+std::string Weasel::SkillB(std::vector<Entity *> good, std::vector<Entity *> bad) { return "B"; }
 
-Snake::Snake(std::string name, double damage, double maxhealth, double defense, double speed) : Enemy(name, damage, maxhealth, defense, speed) {}
+Snake::Snake(std::string name, double damage, double maxhealth, double defense, double speed)
+    : Enemy(name, damage, maxhealth, defense, speed) {}
 
-void Snake::SkillA() { std::cout << "Snake Skill A" << std::endl; }
+std::string Snake::SkillA(std::vector<Entity *> good, std::vector<Entity *> bad) { return "A"; }
 
-void Snake::SkillB() { std::cout << "Snake Skill B" << std::endl; }
+std::string Snake::SkillB(std::vector<Entity *> good, std::vector<Entity *> bad) { return "B"; }
 
-// Implementacja klasy Cayman
-Cayman::Cayman(std::string name, double damage, double maxhealth, double defense, double speed) : Enemy(name, damage, maxhealth, defense, speed) {}
+Cayman::Cayman(std::string name, double damage, double maxhealth, double defense, double speed)
+    : Enemy(name, damage, maxhealth, defense, speed) {}
 
-void Cayman::SkillA() { std::cout << "Cayman Skill A" << std::endl; }
+std::string Cayman::SkillA(std::vector<Entity *> good, std::vector<Entity *> bad) { return "A"; }
 
-void Cayman::SkillB() { std::cout << "Cayman Skill B" << std::endl; }
+std::string Cayman::SkillB(std::vector<Entity *> good, std::vector<Entity *> bad) { return "B"; }

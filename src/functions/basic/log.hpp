@@ -20,10 +20,10 @@ class Log {
 
   void PrintStory(std::string);
 
-  void ClearChar() { std::cout << "\b \b"; }
+  inline void ClearChar() { std::cout << "\b \b"; }
 
   void Wait();
-
+  void ClearOne();
   void Reset();
 
   std::string Color(Colors);

@@ -6,8 +6,8 @@ class Shark : public Enemy {
   Shark(std::string, double, double, double, double);
   ~Shark() {}
 
-  void SkillA() override;
-  void SkillB() override;
+  std::string SkillA(std::vector<Entity *>, std::vector<Entity *>) override;
+  std::string SkillB(std::vector<Entity *>, std::vector<Entity *>) override;
 };
 
 class Squid : public Enemy {
@@ -15,8 +15,8 @@ class Squid : public Enemy {
   Squid(std::string, double, double, double, double);
   ~Squid() {}
 
-  void SkillA() override;
-  void SkillB() override;
+  std::string SkillA(std::vector<Entity *>, std::vector<Entity *>) override;
+  std::string SkillB(std::vector<Entity *>, std::vector<Entity *>) override;
 };
 
 class Whale : public Enemy {
@@ -24,6 +24,6 @@ class Whale : public Enemy {
   Whale(std::string, double, double, double, double);
   ~Whale() {}
 
-  void SkillA() override;
-  void SkillB() override;
+  std::string SkillA(std::vector<Entity *>, std::vector<Entity *>) override;
+  std::string SkillB(std::vector<Entity *>, std::vector<Entity *>) override;
 };

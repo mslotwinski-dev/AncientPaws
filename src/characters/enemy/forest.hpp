@@ -6,8 +6,8 @@ class Anteater : public Enemy {
   Anteater(std::string, double, double, double, double);
   ~Anteater() {}
 
-  void SkillA() override;
-  void SkillB() override;
+  std::string SkillA(std::vector<Entity *>, std::vector<Entity *>) override;
+  std::string SkillB(std::vector<Entity *>, std::vector<Entity *>) override;
 };
 
 class Harpy : public Enemy {
@@ -15,8 +15,8 @@ class Harpy : public Enemy {
   Harpy(std::string, double, double, double, double);
   ~Harpy() {}
 
-  void SkillA() override;
-  void SkillB() override;
+  std::string SkillA(std::vector<Entity *>, std::vector<Entity *>) override;
+  std::string SkillB(std::vector<Entity *>, std::vector<Entity *>) override;
 };
 
 class Hawk : public Enemy {
@@ -24,30 +24,30 @@ class Hawk : public Enemy {
   Hawk(std::string, double, double, double, double);
   ~Hawk() {}
 
-  void SkillA() override;
-  void SkillB() override;
+  std::string SkillA(std::vector<Entity *>, std::vector<Entity *>) override;
+  std::string SkillB(std::vector<Entity *>, std::vector<Entity *>) override;
 };
 
 class Weasel : public Enemy {
   Weasel(std::string, double, double, double, double);
   ~Weasel() {}
 
-  void SkillA() override;
-  void SkillB() override;
+  std::string SkillA(std::vector<Entity *>, std::vector<Entity *>) override;
+  std::string SkillB(std::vector<Entity *>, std::vector<Entity *>) override;
 };
 
 class Snake : public Enemy {
   Snake(std::string, double, double, double, double);
   ~Snake() {}
 
-  void SkillA() override;
-  void SkillB() override;
+  std::string SkillA(std::vector<Entity *>, std::vector<Entity *>) override;
+  std::string SkillB(std::vector<Entity *>, std::vector<Entity *>) override;
 };
 
 class Cayman : public Enemy {
   Cayman(std::string, double, double, double, double);
   ~Cayman() {}
 
-  void SkillA() override;
-  void SkillB() override;
+  std::string SkillA(std::vector<Entity *>, std::vector<Entity *>) override;
+  std::string SkillB(std::vector<Entity *>, std::vector<Entity *>) override;
 };

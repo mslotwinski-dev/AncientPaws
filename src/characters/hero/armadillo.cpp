@@ -5,8 +5,17 @@ Armadillo::Armadillo(std::string name, double damage, double maxhealth, double d
 
 std::string Armadillo::GetName() const { return "Pancernik " + name; };
 
-void Armadillo::SkillA() { std::cout << "Skill A" << std::endl; }
+std::vector<std::string> Armadillo::GetSkillList() {
+  std::vector<std::string> a;
 
-void Armadillo::SkillB() { std::cout << "Skill B" << std::endl; }
+  a.push_back("Ostry kamień");
+  a.push_back("Nie do przebicia");
+  a.push_back("Zgniecenie");
+  return a;
+}
 
-void Armadillo::SkillC() { std::cout << "Skill C" << std::endl; }
+std::string Armadillo::SkillA(std::vector<Entity *> good, std::vector<Entity *> bad) { return "A"; }
+
+std::string Armadillo::SkillB(std::vector<Entity *> good, std::vector<Entity *> bad) { return "B"; }
+
+std::string Armadillo::SkillC(std::vector<Entity *> good, std::vector<Entity *> bad) { return "C"; }
