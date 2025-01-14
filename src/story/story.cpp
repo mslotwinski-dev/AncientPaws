@@ -23,7 +23,7 @@ void Story::Read() {
           "starożytne świątynie pozostawione po sobie przez ludzi...");
 
       log.PrintStory(
-          "Jedna z nich była szczególnie tajemnicza. Ludzie mówili o niej jako o miejscu, gdzie każdy skarb ma swoją "
+          "Jedna z nich była szczególnie tajemnicza. Ludzie mówili o niej jako o miejscu, gdzie każdy skarb ma swoją"
           "cenę, a każdy krok prowadzi ku nieznanemu.");
 
       log.Notice(game->GetNames(0), "A co to? Moneta? Oho... I to złota. Dziś mój szczęśliwy dzień.");
@@ -75,18 +75,19 @@ void Story::Read() {
 
       log.PrintStory("Z zarośli wyszła małpa, która trzymała w ręku włócznię, a następnie druga z... Bananem.");
 
-      log.PrintStory("Małpy nie czekały chwili tylko rzuciły się na kapibarę..");
+      log.PrintStory("Małpy nie czekały chwili tylko rzuciły się na kapibarę.");
 
       break;
     }
     case 1: {
       log.Notice("Rozdział 1", "Początki (Wschodnia Brazylia)", RED);
 
-      log.PrintStory("Było ciężko");
+      log.Notice(game->GetNames(0), "Ugh, co to było? We dwie? Niemiło.");
 
-      log.Press(-1);
+      log.PrintStory(
+          "Kapibara rozglądnęła się dookoła i usiadła pod drzewem. Szybko jednak zrozumiała, że dalej coś tu nie gra.");
 
-      log.PrintStory("Ale się udało!");
+      log.Notice(game->GetNames(0), "O nie, łasica!");
 
       break;
     }

@@ -14,26 +14,32 @@ Fight::Fight(std::vector<Hero *> heroes, std::vector<Enemy *> enemies, App *app)
     this->enemies.push_back(enemy);
   }
 
-  std::sort(
-      this->entities.begin(), this->entities.end(), [](Entity *a, Entity *b) { return a->GetSpeed() > b->GetSpeed(); });
+  Sort();
 
   Run();
 }
 
+void Fight::Sort() {
+  std::sort(
+      this->entities.begin(), this->entities.end(), [](Entity *a, Entity *b) { return a->GetSpeed() > b->GetSpeed(); });
+}
+
 Fight::~Fight() {
-  for (auto *entity : entities) {
-    delete entity;
+  for (auto *enemy : enemies) {
+    delete enemy;
   }
 }
 
 void Fight::Run() {
+  Sort();
+
   while (true) {
     for (auto it = entities.begin(); it != entities.end();) {
-      Visualize();
-
       if (enemies.empty()) {
+        log.Clear();
         return;
       }
+      Visualize();
 
       if (*it != nullptr) {
         log.Print((*it)->Turn(heroes, enemies));
@@ -48,10 +54,6 @@ void Fight::Run() {
       }
 
       ++it;
-    }
-
-    if (enemies.empty()) {
-      break;
     }
   }
 }

@@ -20,9 +20,13 @@ class Entity {
   inline double GetDefense() { return defense; };
   inline double GetSpeed() { return speed; };
 
-  bool DealDmg(double);
-
   Entity* PickTarget(std::vector<Entity*>);
+
+  double CalcDamage(Entity*);
+
+  bool DealDmg(double);
+  inline void Weakness(double weak) { this->damage -= weak; };
+  void Heal(double);
 
   virtual std::string GetName() const = 0;
   virtual std::string Turn(std::vector<Entity*>, std::vector<Entity*>) = 0;

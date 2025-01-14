@@ -29,7 +29,8 @@ class Hawk : public Enemy {
 };
 
 class Weasel : public Enemy {
-  Weasel(std::string, double, double, double, double);
+ public:
+  Weasel(std::string = "Łasica", double = 22, double = 130, double = 0, double = 5);
   ~Weasel() {}
 
   std::string SkillA(std::vector<Entity *>, std::vector<Entity *>) override;
@@ -37,6 +38,7 @@ class Weasel : public Enemy {
 };
 
 class Snake : public Enemy {
+ public:
   Snake(std::string, double, double, double, double);
   ~Snake() {}
 
@@ -45,6 +47,7 @@ class Snake : public Enemy {
 };
 
 class Cayman : public Enemy {
+ public:
   Cayman(std::string, double, double, double, double);
   ~Cayman() {}
 

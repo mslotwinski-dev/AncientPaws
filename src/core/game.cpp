@@ -27,6 +27,12 @@ std::vector<std::string> Game::GetNames() {
 
 std::string Game::GetNames(int i) { return GetNames()[i]; }
 
+void Game::BeginFight(std::vector<Enemy*>& enemies) {
+  Fight* tmp = new Fight(heroes, enemies, app);
+  delete tmp;
+  enemies.clear();
+}
+
 void Game::Start() {
   std::vector<Enemy*> enemies;
 
@@ -34,10 +40,12 @@ void Game::Start() {
 
   enemies.push_back(new Monkey());
   enemies.push_back(new Monkey());
-
-  Fight fight(heroes, enemies, app);
+  BeginFight(enemies);
 
   story->Next();
+
+  enemies.push_back(new Weasel());
+  BeginFight(enemies);
 
   app->Finish();
 }

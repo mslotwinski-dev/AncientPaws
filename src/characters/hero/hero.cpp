@@ -15,7 +15,12 @@ Hero::Hero(std::string name, double damage, double maxhealth, double defense, do
   this->stamina = maxstamina;
 }
 
-std::string Hero::Sleep() { return "ABC"; }
+std::string Hero::Sleep() {
+  this->stamina = std::min(this->stamina + maxstamina / 2, maxstamina);
+  std::string result = GetName() + " zasypia przywracając sobie połowę punktów wytrzymałości";
+
+  return result;
+}
 
 std::string Hero::Turn(std::vector<Entity*> good, std::vector<Entity*> bad) {
   std::vector<std::string> a = GetSkillList();

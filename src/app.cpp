@@ -30,7 +30,10 @@ void App::Finish() {
       game = newGame;
       Start();
     };
-    case 2: exit(0);
+    case 2: {
+      log.Print("Dziękuję za grę <3");
+      exit(0);
+    };
   }
 }
 
@@ -58,7 +61,7 @@ void App::Menu() {
 
 void App::Author() {
   log.Notice("Autor", "Mateusz Słotwiński", CYAN);
-  // log.Notice("Inspiracja", "Maniakulkazb", MAGENTA);
+  // log.Notice("Inspiracja", "Maniakulka", MAGENTA);
 
   log.Press();
   Start();

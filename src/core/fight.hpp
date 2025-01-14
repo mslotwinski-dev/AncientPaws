@@ -20,6 +20,7 @@ class Fight {
   bool Kill();
   void Run();
   void Visualize();
+  void Sort();
 
  public:
   Fight(std::vector<Hero *>, std::vector<Enemy *>, App *);

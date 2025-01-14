@@ -21,8 +21,8 @@ std::string Enemy::TryEscape() {
   if (failed) {
     return name + " podejmuje nieudaną próbę ucieczki";
   } else {
+    this->health = -2137;
     return name + " podejmuje udaną próbę ucieczki";
-    health = 0;
   }
 
   return "Błąd podczas używania systemu ucieczki " + name;

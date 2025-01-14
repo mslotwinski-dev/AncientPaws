@@ -64,9 +64,17 @@ void Log::Notice(std::string v, std::string w, Colors i) {
 
 void Log::PrintStory(std::string n) {
   lines++;
+
+  bool dev = false;
+
   std::srand(std::time(nullptr));
   int minDelayMs = 10;
   int maxDelayMs = 60;
+
+  if (dev) {
+    minDelayMs /= 100;
+    maxDelayMs /= 100;
+  }
   std::cout << "\033[3m";
 
   for (char c : n) {

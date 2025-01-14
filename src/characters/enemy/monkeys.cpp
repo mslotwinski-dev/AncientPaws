@@ -6,12 +6,12 @@ Monkey::Monkey(std::string name, double damage, double maxhealth, double defense
 std::string Monkey::SkillA(std::vector<Entity *> good, std::vector<Entity *> bad) {
   Entity *target = PickTarget(good);
 
-  double CalcDamage = this->damage - target->GetDefense();
+  double _damage = CalcDamage(target);
 
   std::string result = GetName() + " uderza włócznią w " + target->GetName() + " zadając " +
-                       std::to_string(static_cast<int>(std::round(CalcDamage))) + " punktów obrażeń";
+                       std::to_string(static_cast<int>(std::round(_damage))) + " punktów obrażeń";
 
-  if (target->DealDmg(CalcDamage)) {
+  if (target->DealDmg(_damage)) {
     result += " zabijając przeciwnika";
   }
 
@@ -21,12 +21,12 @@ std::string Monkey::SkillA(std::vector<Entity *> good, std::vector<Entity *> bad
 std::string Monkey::SkillB(std::vector<Entity *> good, std::vector<Entity *> bad) {
   Entity *target = PickTarget(good);
 
-  double CalcDamage = this->damage - target->GetDefense();
+  double _damage = CalcDamage(target);
 
   std::string result = GetName() + " rzuca bananem w " + target->GetName() + " zadając " +
-                       std::to_string(static_cast<int>(std::round(CalcDamage))) + " punktów obrażeń";
+                       std::to_string(static_cast<int>(std::round(_damage))) + " punktów obrażeń";
 
-  if (target->DealDmg(CalcDamage)) {
+  if (target->DealDmg(_damage)) {
     result += " zabijając przeciwnika";
   }
 

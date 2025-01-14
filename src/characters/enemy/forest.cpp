@@ -24,9 +24,29 @@ std::string Hawk::SkillB(std::vector<Entity *> good, std::vector<Entity *> bad) 
 Weasel::Weasel(std::string name, double damage, double maxhealth, double defense, double speed)
     : Enemy(name, damage, maxhealth, defense, speed) {}
 
-std::string Weasel::SkillA(std::vector<Entity *> good, std::vector<Entity *> bad) { return "A"; }
+std::string Weasel::SkillA(std::vector<Entity *> good, std::vector<Entity *> bad) {
+  Entity *target = PickTarget(good);
 
-std::string Weasel::SkillB(std::vector<Entity *> good, std::vector<Entity *> bad) { return "B"; }
+  double _damage = CalcDamage(target);
+
+  std::string result = GetName() + " drapie pazurami w " + target->GetName() + " zadając " +
+                       std::to_string(static_cast<int>(std::round(_damage))) + " punktów obrażeń";
+
+  if (target->DealDmg(_damage)) {
+    result += " zabijając przeciwnika";
+  }
+
+  return result;
+}
+
+std::string Weasel::SkillB(std::vector<Entity *> good, std::vector<Entity *> bad) {
+  std::string result = GetName() + " przygotowuje się do kontrataku zwiększając szybkość i atak o 5 punktów";
+
+  this->speed += 5;
+  this->damage += 5;
+
+  return result;
+}
 
 Snake::Snake(std::string name, double damage, double maxhealth, double defense, double speed)
     : Enemy(name, damage, maxhealth, defense, speed) {}
