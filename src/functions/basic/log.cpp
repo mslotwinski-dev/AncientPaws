@@ -1,12 +1,27 @@
 #include "log.hpp"
 
+#ifdef _WIN32
+#else
+int getch() {  // ?? Pan internet tak powiedział nie wiem skąd to
+  struct termios oldt, newt;
+  int ch;
+  tcgetattr(STDIN_FILENO, &oldt);
+  newt = oldt;
+  newt.c_lflag &= ~(ICANON | ECHO);
+  tcsetattr(STDIN_FILENO, TCSANOW, &newt);
+  ch = getchar();
+  tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
+  return ch;
+}
+#endif
+
 std::string Log::Color(Colors i) {
   switch (i) {
     case RED: return "\033[31m";      // Czerwony
     case GREEN: return "\033[32m";    // Zielony
     case YELLOW: return "\033[33m";   // Żółty
     case BLUE: return "\033[34m";     // Niebieski
-    case MAGENTA: return "\033[35m";  // Magenta (fioletowy)
+    case MAGENTA: return "\033[35m";  // Fioletowy
     case CYAN: return "\033[36m";     // Cyjan
     case NONE: return "\033[37m";     // Biały
     default: return "";               // Brak koloru (domyślny)
@@ -42,7 +57,11 @@ void Log::Clear(int n) {
 
 void Log::Press(int n) {
   Print("Wciśnij dowolny klawisz, aby kontynuować...");
+#ifdef _WIN32
   _getch();
+#else
+  getch();
+#endif
 
   Clear(n);
 }

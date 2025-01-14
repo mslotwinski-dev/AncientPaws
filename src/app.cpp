@@ -1,8 +1,17 @@
 #include "app.hpp"
 
 App::App() : game(), log() {
-  SetConsoleOutputCP(CP_UTF8);
+#ifdef _WIN32
+  SetConsoleOutputCP(CP_UTF8); 
+#else
+  setlocale(LC_ALL, "en_US.UTF-8");  
+#endif
+
+#ifdef _WIN32
   system("cls");
+#else
+  system("clear"); 
+#endif
 
   log.PrintStory("To historia z życia wzięta, a zaczyna się tak");
   log.Print("Ancient Paws", RED);
