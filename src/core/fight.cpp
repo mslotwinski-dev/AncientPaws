@@ -31,9 +31,8 @@ Fight::~Fight() {
 }
 
 void Fight::Run() {
-  Sort();
-
   while (true) {
+    Sort();
     for (auto it = entities.begin(); it != entities.end();) {
       if (enemies.empty()) {
         log.Clear();
