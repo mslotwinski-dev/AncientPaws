@@ -27,7 +27,7 @@ std::string Cappybara::SkillA(std::vector<Entity *> good, std::vector<Entity *> 
   double _damage = CalcDamage(bad[target]);
 
   std::string result = GetName() + " dwoma precyzyjnymi cięciami zadaje " + bad[target]->GetName() + " " +
-                       std::to_string(static_cast<int>(std::round(_damage))) + " punktów obrażeń";
+                       ParseDamage(_damage) + " punktów obrażeń";
 
   if (bad[target]->DealDmg(_damage)) {
     result += " zabijając przeciwnika";
@@ -49,14 +49,14 @@ std::string Cappybara::SkillB(std::vector<Entity *> good, std::vector<Entity *> 
   double _damage = CalcDamage(bad[target]) / 2;
   double _weakness = this->damage / 10;
 
-  std::string result = GetName() + " tropikalną falą zadaje " + bad[target]->GetName() + " " +
-                       std::to_string(static_cast<int>(std::round(_damage))) + " punktów obrażeń";
+  std::string result = GetName() + " tropikalną falą zadaje " + bad[target]->GetName() + " " + ParseDamage(_weakness) +
+                       " punktów obrażeń";
 
   if (bad[target]->DealDmg(_damage)) {
     result += " zabijając przeciwnika";
   } else {
     bad[target]->Weakness(_weakness);
-    result += " osłabiając atak przeciwnika o " + std::to_string(static_cast<int>(std::round(_weakness))) + " punktów";
+    result += " osłabiając atak przeciwnika o " + ParseDebuff(_weakness) + " punktów";
   }
 
   return result;
@@ -69,7 +69,7 @@ std::string Cappybara::SkillC(std::vector<Entity *> good, std::vector<Entity *> 
     a->Heal(_healing);
   }
 
-  std::string result = GetName() + " robi wesoły plusk przywracając sobie i sojusznikom " +
-                       std::to_string(static_cast<int>(std::round(_healing))) + " punktów zdrowia i stresu";
+  std::string result = GetName() + " robi wesoły plusk przywracając sobie i sojusznikom " + ParseHeal(_healing) +
+                       " punktów zdrowia i stresu";
   return result;
 }

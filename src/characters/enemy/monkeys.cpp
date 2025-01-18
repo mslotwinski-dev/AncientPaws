@@ -8,8 +8,8 @@ std::string Monkey::SkillA(std::vector<Entity *> good, std::vector<Entity *> bad
 
   double _damage = CalcDamage(target);
 
-  std::string result = GetName() + " uderza włócznią w " + target->GetName() + " zadając " +
-                       std::to_string(static_cast<int>(std::round(_damage))) + " punktów obrażeń";
+  std::string result =
+      GetName() + " uderza włócznią w " + target->GetName() + " zadając " + ParseDamage(_damage) + " punktów obrażeń";
 
   if (target->DealDmg(_damage)) {
     result += " zabijając przeciwnika";
@@ -23,8 +23,8 @@ std::string Monkey::SkillB(std::vector<Entity *> good, std::vector<Entity *> bad
 
   double _damage = CalcDamage(target);
 
-  std::string result = GetName() + " rzuca bananem w " + target->GetName() + " zadając " +
-                       std::to_string(static_cast<int>(std::round(_damage))) + " punktów obrażeń";
+  std::string result =
+      GetName() + " rzuca bananem w " + target->GetName() + " zadając " + ParseDamage(_damage) + " punktów obrażeń";
 
   if (target->DealDmg(_damage)) {
     result += " zabijając przeciwnika";

@@ -29,8 +29,8 @@ std::string Weasel::SkillA(std::vector<Entity *> good, std::vector<Entity *> bad
 
   double _damage = CalcDamage(target);
 
-  std::string result = GetName() + " drapie pazurami w " + target->GetName() + " zadając " +
-                       std::to_string(static_cast<int>(std::round(_damage))) + " punktów obrażeń";
+  std::string result =
+      GetName() + " drapie pazurami w " + target->GetName() + " zadając " + ParseDamage(_damage) + " punktów obrażeń";
 
   if (target->DealDmg(_damage)) {
     result += " zabijając przeciwnika";
@@ -40,7 +40,8 @@ std::string Weasel::SkillA(std::vector<Entity *> good, std::vector<Entity *> bad
 }
 
 std::string Weasel::SkillB(std::vector<Entity *> good, std::vector<Entity *> bad) {
-  std::string result = GetName() + " przygotowuje się do kontrataku zwiększając szybkość i atak o 5 punktów";
+  std::string result =
+      GetName() + " przygotowuje się do kontrataku zwiększając szybkość i atak o " + ParseBuff(5) + " punktów";
 
   this->speed += 5;
   this->damage += 5;

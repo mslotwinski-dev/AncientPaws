@@ -1,10 +1,11 @@
 #pragma once
 #include "../../inc.hpp"
 
-enum Colors { NONE, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN };
+enum Colors { NONE, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, ORANGE, LIGHT };
 
 class Log {
   int lines;
+  bool dev = false;
 
  public:
   Log() { lines = 0; }
@@ -26,5 +27,5 @@ class Log {
   void ClearOne();
   void Reset();
 
-  std::string Color(Colors);
+  static std::string Color(Colors);
 };

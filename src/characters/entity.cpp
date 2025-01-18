@@ -22,3 +22,19 @@ bool Entity::DealDmg(double dmg) {
 double Entity::CalcDamage(Entity* target) { return std::max((this->damage - target->GetDefense()), 2.0); }
 
 void Entity::Heal(double h) { this->health = std::min(this->health + h, this->maxhealth); }
+
+std::string Entity::ParseHeal(double v) {
+  return Log::Color(GREEN) + std::to_string(static_cast<int>(std::round(v))) + Log::Color(NONE);
+}
+
+std::string Entity::ParseDamage(double v) {
+  return Log::Color(RED) + std::to_string(static_cast<int>(std::round(v))) + Log::Color(NONE);
+}
+
+std::string Entity::ParseBuff(double v) {
+  return Log::Color(CYAN) + std::to_string(static_cast<int>(std::round(v))) + Log::Color(NONE);
+}
+
+std::string Entity::ParseDebuff(double v) {
+  return Log::Color(LIGHT) + std::to_string(static_cast<int>(std::round(v))) + Log::Color(NONE);
+}

@@ -2,15 +2,15 @@
 
 App::App() : game(), log() {
 #ifdef _WIN32
-  SetConsoleOutputCP(CP_UTF8); 
+  SetConsoleOutputCP(CP_UTF8);
 #else
-  setlocale(LC_ALL, "en_US.UTF-8");  
+  setlocale(LC_ALL, "en_US.UTF-8");
 #endif
 
 #ifdef _WIN32
   system("cls");
 #else
-  system("clear"); 
+  system("clear");
 #endif
 
   log.PrintStory("To historia z życia wzięta, a zaczyna się tak");
@@ -83,6 +83,6 @@ void App::Start() {
     case 1: Play();
     case 2: Menu();
     case 3: Author();
-    case 4: break;
+    case 4: exit(0);
   }
 }
