@@ -13,7 +13,7 @@ App::App() : game(), log() {
   system("clear");
 #endif
 
-  log.PrintStory("To historia z życia wzięta, a zaczyna się tak");
+  log.PrintStory("To historia z życia wzięta, a zaczyna się tak...");
   log.Print("Ancient Paws", RED);
   log.Print("by Mateusz Słotwiński", CYAN);
 
@@ -38,11 +38,13 @@ void App::Finish() {
       Game newGame;
       game = newGame;
       Start();
-    };
+      break;
+    }
     case 2: {
       log.Print("Dziękuję za grę <3");
       exit(0);
-    };
+      break;
+    }
   }
 }
 
@@ -80,9 +82,9 @@ void App::Start() {
   int pick = Pick("Graj", "Zasady gry", "Autor", "Zakończ");
 
   switch (pick) {
-    case 1: Play();
-    case 2: Menu();
-    case 3: Author();
-    case 4: exit(0);
+    case 1: Play(); break;
+    case 2: Menu(); break;
+    case 3: Author(); break;
+    case 4: exit(0); break;
   }
 }
